@@ -2,8 +2,11 @@ function Task(props)
 {
     return(
         <div className="task">
-            {props.task.text}
-            <button>Done</button>
+            <div  style = {{textDecoration: props.task.done ? 'line-through' : ''}}>{props.task.text}</div>
+            <div>
+                <button onClick={()=> props.doneTask(props.index)}>Done</button>
+                <button onClick={()=> props.deleteTask(props.index)}>X</button>
+            </div>
         </div>
     )
 }
